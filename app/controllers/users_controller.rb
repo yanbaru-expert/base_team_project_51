@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     User.create(user_params)
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   private
 
   def user_params
