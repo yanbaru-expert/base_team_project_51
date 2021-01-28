@@ -1,5 +1,19 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all
+  end
+
   def new
-    @new = User.new
+    @user = User.new
+  end
+
+  def create
+    User.create(user_params)
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:title, :contents)
   end
 end
