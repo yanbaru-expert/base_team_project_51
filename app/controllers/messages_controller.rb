@@ -7,8 +7,12 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
-  def creat
+  def create
     Message.create(message_params)
+  end
+
+  def show
+    @message = Message.find(params[:id])
   end
 
   private
